@@ -1,12 +1,12 @@
 {
-    "contents" : "library(shiny)\nlibrary(UsingR)\ndata(galton)\n\nshinyServer(\n     function(input, output) {\n          output$myHist <- renderPlot({\n               hist(galton$child, xlab='child height', col='lightblue',main='Histogram')\n               mu <- input$mu\n               lines(c(mu, mu), c(0, 200),col=\"red\",lwd=5)\n               mse <- mean((galton$child - mu)^2)\n               text(63, 150, paste(\"mu = \", mu))\n               text(63, 140, paste(\"MSE = \", round(mse, 2)))\n          })\n          \n     }\n)\n\n\n",
+    "contents" : "library(shiny)\nlibrary(UsingR)\ndata(galton)\n\nshinyServer(\n     function(input, output) {\n          output$myHist <- renderPlot({\n               hist(galton$child, xlab='child height', col='lightgreen',main='Histogram')\n               mu <- input$mu\n               lines(c(mu, mu), c(0, 200),col=\"red\",lwd=5)\n               mse <- mean((galton$child - mu)^2)\n               text(63, 150, paste(\"mu = \", mu))\n               text(63, 140, paste(\"MSE = \", round(mse, 2)))\n          })\n          \n     }\n)\n\n\n",
     "created" : 1447273774065.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3809654895",
+    "hash" : "3619606744",
     "id" : "DF9521B2",
-    "lastKnownWriteTime" : 1447273797,
+    "lastKnownWriteTime" : 1447274680,
     "path" : "~/Dropbox/R/apl_ds/apl_ds9/histogram/histogram/server.R",
     "project_path" : "server.R",
     "properties" : {
