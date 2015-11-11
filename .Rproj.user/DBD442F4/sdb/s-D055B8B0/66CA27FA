@@ -1,0 +1,18 @@
+{
+    "contents" : "library(shiny)\nshinyUI(pageWithSidebar(\n     headerPanel(\"Example plot\"),\n     sidebarPanel(\n          sliderInput('mu', 'Guess at the mu',value = 70, min = 60, max = 80, step = 0.05,)\n     ),\n     mainPanel(\n          plotOutput('myHist')\n     )\n))\n\n",
+    "created" : 1447273704162.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2547241436",
+    "id" : "66CA27FA",
+    "lastKnownWriteTime" : 1447273809,
+    "path" : "~/Dropbox/R/apl_ds/apl_ds9/histogram/histogram/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
