@@ -1,19 +1,20 @@
 library(shiny)
+library(ggplot2)
+library(Cairo)   # For nicer ggplot2 output when deployed on Linux
 library(UsingR)
-data(galton)
+library(ggthemes)
 
+source('helper.R')
 shinyServer(
      function(input, output) {
           output$myHist <- renderPlot({
-               hist(galton$child, xlab='child height', col='lightgreen',main='Histogram')
-               mu <- input$mu
-               lines(c(mu, mu), c(0, 200),col="red",lwd=5)
-               mse <- mean((galton$child - mu)^2)
-               text(63, 150, paste("mu = ", mu))
-               text(63, 140, paste("MSE = ", round(mse, 2)))
-          })
-          
+               xLabel= 'Daily minimum temperature in Woodstock Vermont 1980-1985.'
+               bin <- input$bin
+               ggplot(myData, aes(x= myData$X.coldvermont., ..density..)) + 
+                    geom_histogram(binwidth= bin, color= 'black', fill= 'lightblue') + 
+                    geom_density(fill= NA, color= 'red', size= 1.25) +
+                    labs(x= xLabel) +
+                    theme_classic()
+                    })
      }
 )
-
-

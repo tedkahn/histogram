@@ -1,11 +1,19 @@
 library(shiny)
+library(markdown)
+library(UsingR)
+
 shinyUI(pageWithSidebar(
-     headerPanel("Example plot"),
+     
+     headerPanel("Histogram Shape and the Kernel Density Function"),
      sidebarPanel(
-          sliderInput('mu', 'Guess at the mu',value = 70, min = 60, max = 80, step = 0.05,)
+          sliderInput('bin', 'Specify the bin width:',value = 5, min = 1, max = 10, step = 1),
+          includeMarkdown("instructions.md")
      ),
      mainPanel(
-          plotOutput('myHist')
+          tabsetPanel(type = "tabs", 
+               tabPanel("Histogram", plotOutput('myHist')), 
+               tabPanel("Explanation",  includeMarkdown("explaination.md")) 
+          )
      )
 ))
 

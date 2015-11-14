@@ -1,0 +1,7 @@
+library(UsingR)
+data("coldvermont")
+myData <- data.frame((coldvermont))
+myData$X.coldvermont. <- as.numeric(myData$X.coldvermont.)
+myData <- na.omit(myData)
+save(myData, file= 'myData.rda')
+load('myData.rda')
